@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/projects/images/calculator-svgrepo-com.svg" type="image/gif" sizes="16x16">
+  <link rel="stylesheet" href="calculator.css">
+  <title>Calculator </title>
+</head>
+<body>
+  <div class="container">
+    
+    <input class="mathoutput"></input>
+    <p class="row">
+      <button onclick="
+        updateCalculation('1');
+      ">1</button>
+
+      <button onclick="
+        updateCalculation('2');
+      ">2</button>
+
+      <button onclick="
+        updateCalculation('3');
+      ">3</button>
+
+      <button class="operators" onclick="
+        updateCalculation(' + ');
+      ">+</button>
+    </p>
+
+    
+    
+    <p class="row">
+      <button onclick="
+        updateCalculation('4');
+      ">4</button>
+    
+      <button onclick="
+        updateCalculation('5');
+      ">5</button>
+    
+      <button onclick="
+        updateCalculation('6');
+      ">6</button>
+    
+      <button class="operators" onclick="
+        updateCalculation(' - ');
+      ">-</button>
+    </p>
+
+    <p class="row">
+      <button onclick="
+        updateCalculation('7');
+      ">7</button>
+    
+      <button onclick="
+        updateCalculation('8');
+      ">8</button>
+    
+      <button onclick="
+        updateCalculation('9');
+      ">9</button>
+    
+      <button class="operators" onclick="
+        updateCalculation(' * ');
+      ">*</button>
+    </p>
+
+    <p class="row row4">
+      <button onclick="
+        updateCalculation('0');
+      ">0</button>
+    
+      <button class="dot" onclick="
+        updateCalculation('.');
+      ">.</button>
+
+      <!-- <div class="row4">
+        <button class="equal" onclick="
+          updateCalculation('=');
+          renderElements();
+          calculation = '';
+        ">=</button>
+      </div> -->
+
+      <button class="equal-btn" onclick="
+        updateCalculation('=');
+        renderElements();
+        calculation = '';
+      ">=</button>
+
+      <button class="operators" onclick="
+        updateCalculation(' / ');
+      ">/</button>
+    </p>
+
+    <p class="row clearShow">
+      <button class="clear" onclick="
+        
+        localStorage.removeItem('calculation');
+        calculation = 0;
+        
+        renderElements();
+        calculation = '';
+        console.log('Cleared.');
+        
+      ">Clear</button>
+
+      <button class="clear" onclick="
+        console.log(calculation);
+      ">Show</button>
+    </p>
+  </div>
+  <script src="/calculator.js">
+  </script>
+</body>
+</html>
