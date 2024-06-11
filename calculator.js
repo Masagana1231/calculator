@@ -1,7 +1,6 @@
 let calculation = JSON.parse(localStorage.getItem("calculation")) || 0;
 renderElements();
 function updateCalculation(value) {
-  renderElements();
   if (value === "=") {
     console.log(eval(calculation));
     calculation = eval(calculation);
@@ -10,8 +9,7 @@ function updateCalculation(value) {
   } else {
     calculation += value;
   }
-
-  localStorage.setItem("calculation", JSON.stringify(calculation));
+  //localStorage.setItem("calculation", JSON.stringify(calculation));
   renderElements();
   return console.log(calculation);
 }
@@ -27,10 +25,8 @@ movingButton.addEventListener("mouseover", function () {
 
   if (Math.random() > 0.5) {
     randomLeft = Math.random() * 600;
-    console.log("greater than 0.5");
   } else {
     randomLeft = Math.random() * -600;
-    console.log("less than 0.5");
   }
 
   const randomTop = Math.random() * -350;
@@ -38,3 +34,14 @@ movingButton.addEventListener("mouseover", function () {
   this.style.left = randomLeft + "px";
   this.style.top = randomTop + "px";
 });
+
+const clearButton = document
+  .querySelector(".clear")
+  .addEventListener("click", () => {
+    const movingButton = document.querySelector(".equal-btn");
+    let randomLeft = 0;
+    const randomTop = 0;
+
+    movingButton.style.left = randomLeft + "px";
+    movingButton.style.top = randomTop + "px";
+  });
